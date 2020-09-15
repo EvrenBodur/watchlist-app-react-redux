@@ -12,12 +12,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
+  width: 50%;
   height: 100%;
 }
 
-.nav-link {
+.nav-link,
+.nav-link-brand {
   margin: 5px;
   color: whitesmoke;
   text-decoration: none;
+}
+
+.nav-link-brand {
+  flex: 1;
 }

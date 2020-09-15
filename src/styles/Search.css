@@ -1,0 +1,30 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.input {
+  width: 20%;
+  height: 50px;
+  outline: none;
+  padding: 5px;
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  font-size: 1.5rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
