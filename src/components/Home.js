@@ -16,24 +16,41 @@ const Home = () => {
     dispatch(fetchTrendMovies());
     dispatch(fetchPopularMovies());
     dispatch(fetchReleaseDateMovies());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="home-container">
       <div className="row">
-        {trendMovies.results.map((movie) => (
-          <Card key={movie.id} movie={movie} />
-        ))}
+        <div className="homepage-titles">Trending Movies</div>
+        <div className="row-movies">
+          {trendMovies.results.map((movie) => {
+            if (movie.poster_path) {
+              return <Card key={movie.id} movie={movie} />;
+            } else {
+              return null;
+            }
+          })}
+        </div>
       </div>
       <div className="row">
-        {popularMovies.results.map((movie) => (
-          <Card key={movie.id} movie={movie} />
-        ))}
+        <div className="homepage-titles">Popular Movies</div>
+        <div className="row-movies">
+          {popularMovies.results.map((movie) => (
+            <Card key={movie.id} movie={movie} />
+          ))}
+        </div>
       </div>
       <div className="row">
-        {releaseDateMovies.results.map((movie) => (
-          <Card key={movie.id} movie={movie} />
-        ))}
+        <div className="homepage-titles">Release Date</div>
+        <div className="row-movies">
+          {releaseDateMovies.results.map((movie) => {
+            if (movie.poster_path) {
+              return <Card key={movie.id} movie={movie} />;
+            } else {
+              return null;
+            }
+          })}
+        </div>
       </div>
     </div>
   );
