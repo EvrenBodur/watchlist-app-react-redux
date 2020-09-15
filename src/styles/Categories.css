@@ -1,0 +1,27 @@
+.categories-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  padding: 10px;
+}
+
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 30%;
+}
+
+.genre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 15%;
+  border: 1px solid white;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
+  border-color: mediumvioletred;
+  text-decoration: none;
+  color: whitesmoke;
+}

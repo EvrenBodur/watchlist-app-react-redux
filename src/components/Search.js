@@ -17,15 +17,23 @@ const Search = () => {
   useEffect(() => {
     if (input === "") return;
     dispatch(fetchSearchMovies(input));
-  }, [input]);
+  }, [input, dispatch]);
 
   return (
     <div className="search-container">
-      <input onChange={handleChange} className="input" placeholder="Search.." />
+      <input
+        onChange={handleChange}
+        className="input"
+        placeholder="Movies or Tv Series.."
+      />
       <div className="search">
-        {searchMovies.results.map((movie) => (
-          <Card key={movie.id} movie={movie} />
-        ))}
+        {searchMovies.results.map((movie) => {
+          if (movie.poster_path) {
+            return <Card key={movie.id} movie={movie} />;
+          } else {
+            return null;
+          }
+        })}
       </div>
     </div>
   );

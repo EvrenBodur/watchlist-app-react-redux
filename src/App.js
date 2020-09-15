@@ -16,10 +16,10 @@ const App = () => {
         <Navigation />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/categories" component={Categories} />
-          <Route exact path="/watchlist" component={Watchlist} />
-          <Route exact path="/watched" component={Watched} />
+          <Route path="/search" component={Search} />
+          <Route path="/categories" component={Categories} />
+          <Route path="/watchlist" component={Watchlist} />
+          <Route path="/watched" component={Watched} />
         </Switch>
       </Router>
     </div>
