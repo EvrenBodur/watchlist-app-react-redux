@@ -12,6 +12,9 @@ const MovieDetails = ({ movieDetails, handleBackButton }) => {
         />
       </div>
       <div className="details">{movie.original_name}</div>
+      <div className="details">{movie.first_air_date}</div>
+      <div className="details">{movie.overview}</div>
+      <div className="details">{movie.vote_average}</div>
       <button onClick={handleBackButton}>Back</button>
     </div>
   );
