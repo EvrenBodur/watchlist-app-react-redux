@@ -24,7 +24,7 @@ const Search = () => {
       <input
         onChange={handleChange}
         className="input"
-        placeholder="Movies or Tv Series.."
+        placeholder="Search movies or tv series..."
       />
       <div className="search">
         {searchMovies.results.map((movie) => {

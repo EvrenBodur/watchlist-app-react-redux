@@ -3,8 +3,10 @@
   min-width: 10%;
   height: 100%;
   margin: 5px;
-  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.301);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.301);
   transition: all 0.1s ease;
+  cursor: pointer;
+  border: 2px solid black;
 }
 
 .card:hover {
