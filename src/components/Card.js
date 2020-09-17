@@ -1,11 +1,10 @@
 import React from "react";
 import "../styles/Card.css";
 
-const Card = ({ movie, handleDetails }) => {
+const Card = ({ movie }) => {
   return (
-    <div className="card">
+    <div className="card-container">
       <img
-        onClick={() => handleDetails(movie)}
         src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
         alt={movie.title}
       />

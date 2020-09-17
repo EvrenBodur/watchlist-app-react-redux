@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSearchMovies } from "../redux/actions/searchMoviesAction";
-import Card from "../components/Card";
+import { fetchSearchMovies } from "../actions/searchMoviesAction";
+import Card from "./Card";
 import "../styles/Search.css";
 
 const Search = () => {
-  const [input, setInput] = useState("");
   const dispatch = useDispatch();
   const { searchMovies } = useSelector((state) => state.searchMovies);
-
-  const handleChange = (e) => {
-    if (e.target.value === "") return;
-    setInput(e.target.value);
-  };
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     if (input === "") return;
     dispatch(fetchSearchMovies(input));
-  }, [input, dispatch]);
+  }, [input]);
 
+  const handleInput = (e) => {
+    if (e.target.value === "") return;
+    setInput(e.target.value);
+  };
+  console.log(searchMovies);
   return (
     <div className="search-container">
       <input
-        onChange={handleChange}
+        placeholder="Search movies or tv series.."
         className="input"
-        placeholder="Search movies or tv series..."
+        onChange={handleInput}
       />
-      <div className="search">
-        {searchMovies.results.map((movie) => {
+      <div className="search-body">
+        {searchMovies.map((movie) => {
           if (movie.poster_path) {
             return <Card key={movie.id} movie={movie} />;
           } else {

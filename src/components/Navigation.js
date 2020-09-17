@@ -1,29 +1,38 @@
 import React from "react";
-import "../styles/Navigation.css";
 import { Link } from "react-router-dom";
+import "../styles/Navigation.css";
 
 const Navigation = () => {
+  const handleOpen = () => {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("open");
+  };
+
   return (
-    <div className="navi-container">
-      <Link to="/" className="nav-link-brand">
-        WatchList
-      </Link>
-      <Link to="/" className="nav-link">
-        Home
-      </Link>
-      <Link to="/search" className="nav-link">
-        Search
-      </Link>
-      <Link to="/categories" className="nav-link">
-        Categories
-      </Link>
-      <Link to="/watchlist" className="nav-link">
-        Watch List
-      </Link>
-      <Link to="/watched" className="nav-link">
-        Watched
-      </Link>
-    </div>
+    <nav className="nav-container">
+      <div onClick={handleOpen} className="hamburger">
+        <div className="line "></div>
+        <div className="line "></div>
+        <div className="line "></div>
+      </div>
+      <ul className="nav-links">
+        <Link to="/" className="nav-link" onClick={handleOpen}>
+          Home
+        </Link>
+        <Link to="search" className="nav-link" onClick={handleOpen}>
+          Search
+        </Link>
+        <Link to="categories" className="nav-link" onClick={handleOpen}>
+          Categories
+        </Link>
+        <Link to="watchlist" className="nav-link" onClick={handleOpen}>
+          Watch List
+        </Link>
+        <Link to="watched" className="nav-link" onClick={handleOpen}>
+          Watched
+        </Link>
+      </ul>
+    </nav>
   );
 };
 

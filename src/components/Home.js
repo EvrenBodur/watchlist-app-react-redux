@@ -1,93 +1,72 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
-import MovieDetails from "./MovieDetails";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTrendMovies } from "../redux/actions/trendMoviesAction";
-import { fetchPopularMovies } from "../redux/actions/popularMoviesAction";
-import { fetchReleaseDateMovies } from "../redux/actions/releaseDateAction";
+import { fetchPopularMovies } from "../actions/popularMoviesAction";
+import { fetchPopularTvSeries } from "../actions/popularTvSeriesAction";
+import { fetchTopRatedMovies } from "../actions/topRatedMoviesAction";
+import { fetchTopRatedTvSeries } from "../actions/topRatedTvSeriesAction";
 import "../styles/Home.css";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { trendMovies } = useSelector((state) => state.trendMovies);
   const { popularMovies } = useSelector((state) => state.popularMovies);
-  const { releaseDateMovies } = useSelector((state) => state.releaseDateMovies);
-  const [movieDetails, setMovieDetails] = useState([]);
+  const { popularTvSeries } = useSelector((state) => state.popularTvSeries);
+  const { topRatedMovies } = useSelector((state) => state.topRatedMovies);
+  const { topRatedTvSeries } = useSelector((state) => state.topRatedTvSeries);
 
   useEffect(() => {
-    dispatch(fetchTrendMovies());
     dispatch(fetchPopularMovies());
-    dispatch(fetchReleaseDateMovies());
+    dispatch(fetchPopularTvSeries());
+    dispatch(fetchTopRatedMovies());
+    dispatch(fetchTopRatedTvSeries());
   }, [dispatch]);
-
-  const handleDetails = (movie) => {
-    setMovieDetails([movie]);
-  };
-  console.log(movieDetails);
-
-  const handleBackButton = () => {
-    setMovieDetails([]);
-  };
 
   return (
     <div className="home-container">
-      {movieDetails.length > 0 ? (
-        <MovieDetails
-          movieDetails={movieDetails}
-          handleBackButton={handleBackButton}
-        />
-      ) : (
-        <div>
-          <div className="row">
-            <div className="homepage-titles">Trending Movies</div>
-            <div className="row-movies">
-              {trendMovies.results.map((movie) => {
-                if (movie.poster_path) {
-                  return (
-                    <Card
-                      key={movie.id}
-                      movie={movie}
-                      handleDetails={handleDetails}
-                    />
-                  );
-                } else {
-                  return null;
-                }
-              })}
-            </div>
-          </div>
-          <div className="row">
-            <div className="homepage-titles">Popular Movies</div>
-            <div className="row-movies">
-              {popularMovies.results.map((movie) => (
-                <Card
-                  key={movie.id}
-                  movie={movie}
-                  handleDetails={handleDetails}
-                />
-              ))}
-            </div>
-          </div>
-          <div className="row">
-            <div className="homepage-titles">Release Date</div>
-            <div className="row-movies">
-              {releaseDateMovies.results.map((movie) => {
-                if (movie.poster_path) {
-                  return (
-                    <Card
-                      key={movie.id}
-                      movie={movie}
-                      handleDetails={handleDetails}
-                    />
-                  );
-                } else {
-                  return null;
-                }
-              })}
-            </div>
-          </div>
-        </div>
-      )}
+      <div className="popular-title">Populer Movies</div>
+      <div className="row">
+        {popularMovies.map((movie) => {
+          if (movie.poster_path) {
+            return <Card key={movie.id} movie={movie} />;
+          } else {
+            return null;
+          }
+        })}
+      </div>
+      <div className="pagination">Pagination</div>
+      <div className="popular-title">Populer Tv Series</div>
+      <div className="row">
+        {popularTvSeries.map((movie) => {
+          if (movie.poster_path) {
+            return <Card key={movie.id} movie={movie} />;
+          } else {
+            return null;
+          }
+        })}
+      </div>
+      <div className="pagination">Pagination</div>
+      <div className="popular-title">Top Rated Movies</div>
+      <div className="row">
+        {topRatedMovies.map((movie) => {
+          if (movie.poster_path) {
+            return <Card key={movie.id} movie={movie} />;
+          } else {
+            return null;
+          }
+        })}
+      </div>
+      <div className="pagination">Pagination</div>
+      <div className="popular-title">Top Rated Tv Series</div>
+      <div className="row">
+        {topRatedTvSeries.map((movie) => {
+          if (movie.poster_path) {
+            return <Card key={movie.id} movie={movie} />;
+          } else {
+            return null;
+          }
+        })}
+      </div>
+      <div className="pagination">Pagination</div>
     </div>
   );
 };
