@@ -1,16 +1,14 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const INITIAL_STATE = {
-  topRatedTvSeries: [],
-  total_page: "",
+  categories: [],
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.GET_TOP_RATED_TV_SERIES:
+    case actionTypes.GET_CATEGORIES:
       return {
-        topRatedTvSeries: action.payload.results,
-        total_page: action.payload.total_page,
+        categories: action.payload.genres,
       };
     default:
       return state;

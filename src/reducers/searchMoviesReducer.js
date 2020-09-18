@@ -2,7 +2,6 @@ import * as actionTypes from "../actions/actionTypes";
 
 const INITIAL_STATE = {
   searchMovies: [],
-  page: "",
   total_pages: "",
 };
 
@@ -12,7 +11,6 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         searchMovies: action.payload.results,
-        page: action.payload.page,
         total_pages: action.payload.total_pages,
       };
     default:

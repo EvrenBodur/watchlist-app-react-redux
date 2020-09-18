@@ -13,6 +13,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/search" component={Search} />
+          <Route path="/watchlist" />
         </Switch>
       </Router>
     </div>

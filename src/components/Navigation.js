@@ -22,14 +22,8 @@ const Navigation = () => {
         <Link to="search" className="nav-link" onClick={handleOpen}>
           Search
         </Link>
-        <Link to="categories" className="nav-link" onClick={handleOpen}>
-          Categories
-        </Link>
         <Link to="watchlist" className="nav-link" onClick={handleOpen}>
           Watch List
-        </Link>
-        <Link to="watched" className="nav-link" onClick={handleOpen}>
-          Watched
         </Link>
       </ul>
     </nav>
