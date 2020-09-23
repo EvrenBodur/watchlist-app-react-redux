@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSearchMovies } from "../actions/searchMoviesAction";
 import { fetchCategories } from "../actions/categoriesAction";
 import { fetchGenreMovies } from "../actions/genreMoviesAction";
+import { cleaningSearchMovies } from "../actions/searchMoviesAction";
 import Card from "./Card";
 import MovieDetails from "./MovieDetails";
 import Pagination from "./Pagination";
@@ -18,16 +19,17 @@ const Search = () => {
   const { genreMovies, genre_total_pages } = useSelector(
     (state) => state.genreMovies
   );
-
   const [input, setInput] = useState("");
   const [details, setDetails] = useState([]);
   const [page, setPage] = useState(1);
-
   const [value, setValue] = useState("");
 
   useEffect(() => {
     if (input === "") return;
     dispatch(fetchSearchMovies(input, page));
+    return () => {
+      dispatch(cleaningSearchMovies());
+    };
   }, [input, page, dispatch]);
 
   useEffect(() => {
@@ -52,6 +54,7 @@ const Search = () => {
 
   const handleCategories = (event) => {
     setValue(event.target.value);
+    setPage(1);
   };
 
   return (

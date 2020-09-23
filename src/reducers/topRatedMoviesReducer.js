@@ -9,6 +9,7 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.GET_TOP_RATED_MOVIES:
       return {
+        ...state,
         topRatedMovies: action.payload.results,
         total_pages: action.payload.total_pages,
       };

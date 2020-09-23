@@ -13,6 +13,12 @@ export default (state = INITIAL_STATE, action) => {
         searchMovies: action.payload.results,
         total_pages: action.payload.total_pages,
       };
+    case actionTypes.CLEANING_MOVIE_STATE:
+      return {
+        ...state,
+        searchMovies: [],
+        total_pages: "",
+      };
     default:
       return state;
   }

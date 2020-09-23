@@ -12,3 +12,10 @@ export const fetchSearchMovies = (input, page) => (dispatch) => {
       })
     );
 };
+
+export const cleaningSearchMovies = () => (dispatch) => {
+  dispatch({
+    type: actionTypes.CLEANING_MOVIE_STATE,
+    payload: {},
+  });
+};

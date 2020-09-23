@@ -8,6 +8,7 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.GET_CATEGORIES:
       return {
+        ...state,
         categories: action.payload.genres,
       };
     default:
