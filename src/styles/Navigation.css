@@ -26,6 +26,7 @@
   height: 100%;
   color: #ff6f91;
   text-decoration: none;
+  text-shadow: 2px 2px 20px rgba(245, 245, 245, 0.685);
 }
 
 .nav-link:hover {

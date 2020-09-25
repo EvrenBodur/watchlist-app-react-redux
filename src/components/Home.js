@@ -50,7 +50,7 @@ const Home = () => {
       ) : (
         <>
           <div className="row-container">
-            <div className="row-title">Populer Movies</div>
+            <div className="row-title">Popular Movies</div>
             <Pagination
               page={popularMoviesPage}
               setPage={setPopularMoviesPage}
@@ -72,7 +72,7 @@ const Home = () => {
             </div>
           </div>
           <div className="row-container">
-            <div className="row-title">Populer Tv Series</div>
+            <div className="row-title">Popular Tv Series</div>
             <Pagination
               page={popularTvSeriesPage}
               setPage={setPopularTvSeriesPage}

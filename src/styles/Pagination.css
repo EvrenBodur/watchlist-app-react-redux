@@ -8,7 +8,7 @@
 .pagination button {
   width: 100px;
   background-color: #ff6f91;
-  border: 1px solid white;
+  border: none;
   border-radius: 25px;
 }
 
