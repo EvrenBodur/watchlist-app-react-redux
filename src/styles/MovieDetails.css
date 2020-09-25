@@ -2,24 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   background-color: #4b4453;
-  width: 100;
-  min-height: 89vh;
+  min-width: 60%;
+  height: 89vh;
   border-radius: 25px;
-  animation: 0.5s circle;
-  clip-path: circle(1700px at 90% -10%);
-  -webkit-clip-path: circle(1700px at 90% -10%);
-}
-
-@keyframes circle {
-  from {
-    clip-path: circle(50px at 90% -10%);
-    -webkit-clip-path: circle(50px at 90% -10%);
-  }
-  to {
-    clip-path: circle(1700px at 90% -10%);
-    -webkit-clip-path: circle(1700px at 90% -10%);
-  }
+  margin-top: 5px;
 }
 
 .details-container {
@@ -27,17 +15,20 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  max-height: 98vh;
+  height: 100%;
 }
 
 .poster {
-  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
   height: 600px;
 }
 
 .poster img {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-position: center;
   background-size: cover;
 }
@@ -45,15 +36,16 @@
 .fragman-details-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   width: 100%;
   height: 600px;
   margin-left: 10px;
 }
 
-.fragman {
+/* .fragman {
   width: 100%;
-  height: 60%;
-}
+  height: 40%;
+} */
 
 .details {
   width: 100%;
@@ -78,4 +70,51 @@
 
 .button:hover {
   background: #4b4453;
+}
+
+@media screen and (max-width: 1024px) {
+  .movie-details {
+    min-height: 89vh;
+  }
+
+  .details-container {
+    flex-direction: column;
+  }
+
+  .poster {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .poster img {
+    width: 250px;
+    min-height: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movie-details {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .poster {
+    width: 100%;
+  }
+  .poster img {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .poster img {
+    width: 60%;
+  }
+
+  .fragman-details-container {
+    font-size: 0.8rem;
+    height: 100%;
+  }
 }

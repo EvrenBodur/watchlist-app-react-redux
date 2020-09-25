@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 100%;
   min-height: 92vh;
-  padding: 10px;
 }
 
 .row-container {
@@ -19,8 +18,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 700px;
-  padding: 5px;
+  min-height: 600px;
 }
 
 .row-title {

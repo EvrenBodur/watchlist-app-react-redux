@@ -7,6 +7,7 @@
   height: 8vh;
   padding: 0px 5px 0px 5px;
   background-color: #4b4453;
+  z-index: 10;
 }
 
 .nav-links {

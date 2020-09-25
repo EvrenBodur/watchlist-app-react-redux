@@ -1,16 +1,19 @@
 .card-container {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-width: 9%;
   height: 225px;
-  background-color: #bb3bb0;
+  background-color: #4b4453a8;
   margin: 2px;
-  border: 1px solid black;
   transition: all 0.1s ease-in-out;
 }
 
 .card-container img {
+  display: flex;
+
   width: 100%;
   height: 100%;
   background-position: center;
@@ -19,7 +22,30 @@
 
 .card-container:hover {
   cursor: pointer;
+  z-index: 2;
   transform: scale(1.2);
+}
+
+.card-footer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 15%;
+  bottom: 0;
+}
+
+.vote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4b4453;
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 375px) {

@@ -13,19 +13,19 @@ const MovieDetails = ({ details, handleBackButton }) => {
           />
         </div>
         <div className="fragman-details-container">
-          <div className="fragman">fragman</div>
+          <div className="fragman"></div>
           <div className="details">
             <div>{detail.title}</div>
             <div>{detail.overview}</div>
             <div>Release Date: {detail.release_date}</div>
             <div>Vote: {detail.vote_average}</div>
           </div>
-          <div className="button-container">
-            <button className="button" onClick={handleBackButton}>
-              Back
-            </button>
-            <button className="button">Add to watch list</button>
-          </div>
+        </div>
+        <div className="button-container">
+          <button className="button" onClick={handleBackButton}>
+            Back
+          </button>
+          <button className="button">Add to watch list</button>
         </div>
       </div>
     </div>
