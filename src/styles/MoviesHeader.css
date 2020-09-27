@@ -1,0 +1,22 @@
+.movies-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 5vh;
+  background-color: #908899;
+}
+
+.movies-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+.selected {
+  background-color: #7c7484;
+}

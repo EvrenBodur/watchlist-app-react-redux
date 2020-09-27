@@ -1,0 +1,9 @@
+.body-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 87vh;
+  padding: 10px;
+}

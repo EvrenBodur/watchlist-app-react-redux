@@ -1,20 +1,12 @@
 import { combineReducers } from "redux";
-import popularMoviesReducer from "./popularMoviesReducer";
-import popularTvSeriesReducer from "./popularTvSeriesReducer";
-import topRatedMoviesReducer from "./topRatedMoviesReducer";
-import topRatedTvSeriesReducer from "./topRatedTvSeriesReducer";
-import searchMoviesReducer from "./searchMoviesReducer";
-import categoriesReducer from "./categoriesReducer";
-import genreMoviesReducer from "./genreMoviesReducer";
+import moviesReducers from "./moviesReducers";
+import seriesReducers from "./seriesReducer";
 
 const reducers = {
-  popularMovies: popularMoviesReducer,
-  popularTvSeries: popularTvSeriesReducer,
-  topRatedMovies: topRatedMoviesReducer,
-  topRatedTvSeries: topRatedTvSeriesReducer,
-  searchMovies: searchMoviesReducer,
-  categories: categoriesReducer,
-  genreMovies: genreMoviesReducer,
+  moviesStore: moviesReducers,
+  seriesStore: seriesReducers,
 };
 
-export const rootReducer = combineReducers(reducers);
+const rootReducer = combineReducers(reducers);
+
+export default rootReducer;

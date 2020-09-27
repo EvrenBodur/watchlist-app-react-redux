@@ -3,30 +3,28 @@ import { Link } from "react-router-dom";
 import "../styles/Navigation.css";
 
 const Navigation = () => {
-  const handleOpen = () => {
-    const navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("open");
-  };
-
   return (
-    <nav className="nav-container">
-      <div onClick={handleOpen} className="hamburger">
-        <div className="line "></div>
-        <div className="line "></div>
-        <div className="line "></div>
+    <div className="navigation-container">
+      <div className="hamburger-menu">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
-      <ul className="nav-links">
-        <Link to="/" className="nav-link" onClick={handleOpen}>
-          Home
+      <div className="nav-links">
+        <Link className="nav-link" to="/">
+          Movies
         </Link>
-        <Link to="search" className="nav-link" onClick={handleOpen}>
+        <Link className="nav-link" to="/series">
+          Tv Series
+        </Link>
+        <Link className="nav-link" to="/search">
           Search
         </Link>
-        <Link to="watchlist" className="nav-link" onClick={handleOpen}>
+        <Link className="nav-link" to="/watchlist">
           Watch List
         </Link>
-      </ul>
-    </nav>
+      </div>
+    </div>
   );
 };
 

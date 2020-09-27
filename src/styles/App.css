@@ -1,7 +1,10 @@
-.app-container {
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.container {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  background-color: #645c70;
+  background-color: #7c7484;
+  font-family: "Poppins", sans-serif;
 }
