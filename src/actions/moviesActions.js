@@ -50,3 +50,16 @@ export const getNowPlayingMovies = () => (dispatch) => {
       })
     );
 };
+
+export const getMovieTrailer = (movieID) => (dispatch) => {
+  fetch(
+    `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=a78627f739e78c82e6335d377214ef74&language=en-US`
+  )
+    .then((response) => response.json())
+    .then((data) =>
+      dispatch({
+        type: actionTypes.GET_MOVIE_TRAILER,
+        payload: data,
+      })
+    );
+};

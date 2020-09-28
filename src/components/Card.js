@@ -1,10 +1,9 @@
 import React from "react";
 import "../styles/Card.css";
 
-const Card = ({ item }) => {
-  console.log(item);
+const Card = ({ item, detailHandler }) => {
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={() => detailHandler(item)}>
       <div className="poster">
         <img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} />
       </div>

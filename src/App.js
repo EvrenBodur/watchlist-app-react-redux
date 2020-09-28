@@ -29,9 +29,9 @@ const App = () => {
     popularMovies,
     topRatedMovies,
     upComingMovies,
-
     nowPlayingMovies,
     isMoviesLoaded,
+    isMovie,
   } = useSelector((state) => state.moviesStore);
 
   const {
@@ -65,6 +65,7 @@ const App = () => {
                 <CardContainer
                   items={popularMovies}
                   isLoaded={isMoviesLoaded}
+                  isMovie={isMovie}
                 />
               }
             />
@@ -74,6 +75,7 @@ const App = () => {
                 <CardContainer
                   items={topRatedMovies}
                   isLoaded={isMoviesLoaded}
+                  isMovie={isMovie}
                 />
               }
             />
@@ -84,6 +86,7 @@ const App = () => {
                 <CardContainer
                   items={nowPlayingMovies}
                   isLoaded={isMoviesLoaded}
+                  isMovie={isMovie}
                 />
               }
             />
@@ -93,6 +96,7 @@ const App = () => {
                 <CardContainer
                   items={upComingMovies}
                   isLoaded={isMoviesLoaded}
+                  isMovie={isMovie}
                 />
               }
             />

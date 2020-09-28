@@ -12,16 +12,16 @@ const Navigation = () => {
       </div>
       <div className="nav-links">
         <Link className="nav-link" to="/">
-          Movies
+          <i className="fas fa-film"></i> Movies
         </Link>
         <Link className="nav-link" to="/series">
-          Tv Series
+          <i className="fas fa-tv"></i> Tv Series
         </Link>
         <Link className="nav-link" to="/search">
-          Search
+          <i className="fas fa-search"></i> Search
         </Link>
         <Link className="nav-link" to="/watchlist">
-          Watch List
+          <i className="far fa-list-alt"></i> Watch List
         </Link>
       </div>
     </div>

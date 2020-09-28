@@ -6,8 +6,9 @@ const INITIAL_STATE = {
   upComingMovies: [],
   latestMovies: [],
   nowPlayingMovies: [],
-  watchList: [],
+  movieTrailer: [],
   isMoviesLoaded: false,
+  isMovie: true,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -35,6 +36,14 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         nowPlayingMovies: action.payload.results,
         isMoviesLoaded: true,
+      };
+    case actionTypes.GET_MOVIE_TRAILER:
+      return {
+        ...state,
+        movieTrailer:
+          action.payload.results[0] === undefined
+            ? []
+            : action.payload.results[0],
       };
 
     default:

@@ -5,7 +5,9 @@ const INITIAL_STATE = {
   topRatedSeries: [],
   onTheAirSeries: [],
   airingTodaySeries: [],
+  serieTrailer: [],
   isSeriesLoaded: false,
+  isSerie: true,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -33,6 +35,14 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         airingTodaySeries: action.payload.results,
         isSeriesLoaded: true,
+      };
+    case actionTypes.GET_SERIE_TRAILER:
+      return {
+        ...state,
+        serieTrailer:
+          action.payload.results[0] === undefined
+            ? []
+            : action.payload.results[0],
       };
     default:
       return state;

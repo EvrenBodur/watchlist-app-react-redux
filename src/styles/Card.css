@@ -8,6 +8,11 @@
   background-color: white;
   margin: 5px;
   box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
 }
 
 .poster {
