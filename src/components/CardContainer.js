@@ -4,7 +4,7 @@ import Details from "./Details";
 
 import "../styles/CardContainer.css";
 
-const CardContainer = ({ items, isLoaded, isMovie }) => {
+const CardContainer = ({ items, isLoaded, isMovie, isSerie }) => {
   const [details, setDetails] = useState([]);
 
   const detailHandler = (item) => {
@@ -21,6 +21,7 @@ const CardContainer = ({ items, isLoaded, isMovie }) => {
           details={details}
           backButtonHandler={backButtonHandler}
           isMovie={isMovie}
+          isSerie={isSerie}
         />
       ) : isLoaded ? (
         items.map((item) => {

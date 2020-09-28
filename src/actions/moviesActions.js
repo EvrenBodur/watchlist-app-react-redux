@@ -63,3 +63,15 @@ export const getMovieTrailer = (movieID) => (dispatch) => {
       })
     );
 };
+
+export const getSearchMovies = (input) => (dispatch) => {
+  fetch(`
+  https://api.themoviedb.org/3/search/movie?api_key=a78627f739e78c82e6335d377214ef74&language=en-US&query=${input}&page=1&include_adult=false`)
+    .then((response) => response.json())
+    .then((data) =>
+      dispatch({
+        type: actionTypes.GET_SEARCH_MOVIES,
+        payload: data,
+      })
+    );
+};

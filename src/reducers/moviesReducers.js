@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   latestMovies: [],
   nowPlayingMovies: [],
   movieTrailer: [],
+  searchMovies: [],
   isMoviesLoaded: false,
   isMovie: true,
 };
@@ -44,6 +45,11 @@ export default (state = INITIAL_STATE, action) => {
           action.payload.results[0] === undefined
             ? []
             : action.payload.results[0],
+      };
+    case actionTypes.GET_SEARCH_MOVIES:
+      return {
+        ...state,
+        searchMovies: action.payload.results,
       };
 
     default:

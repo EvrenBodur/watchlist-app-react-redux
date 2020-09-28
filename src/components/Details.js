@@ -6,24 +6,24 @@ import { setDetail } from "../actions/watchListAction";
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/Details.css";
 
-const Details = ({ details, backButtonHandler, isMovie }) => {
+const Details = ({ details, backButtonHandler, isMovie, isSerie }) => {
   const detail = details[0];
   const dispatch = useDispatch();
   const { movieTrailer } = useSelector((state) => state.moviesStore);
   const { serieTrailer } = useSelector((state) => state.seriesStore);
 
   useEffect(() => {
-    if (isMovie) {
+    if (isMovie === true) {
       dispatch(getMovieTrailer(detail.id));
-    } else if (isMovie === undefined) {
+    } else if (isSerie === true) {
       dispatch(getSerieTrailer(detail.id));
     }
-  }, [detail.id, isMovie, dispatch]);
+  }, [detail.id, isMovie, isSerie, dispatch]);
 
   const addButtonHandler = () => {
     dispatch(setDetail(detail));
   };
-  console.log(detail);
+
   return (
     <div className="details-container">
       <div className="detail-card">

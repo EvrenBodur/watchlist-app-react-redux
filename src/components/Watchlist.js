@@ -6,7 +6,7 @@ import "../styles/Watchlist.css";
 const Watchlist = () => {
   const dispatch = useDispatch();
   const { detail } = useSelector((state) => state.watchListStore);
-  console.log(detail);
+
   return (
     <div className="watch-list-container">
       {detail.length > 0 ? (
@@ -31,7 +31,8 @@ const Watchlist = () => {
         ))
       ) : (
         <p>
-          Add something to watch later <i class="far fa-grin-squint-tears"></i>
+          Add something to watch later{" "}
+          <i className="far fa-grin-squint-tears"></i>
         </p>
       )}
     </div>

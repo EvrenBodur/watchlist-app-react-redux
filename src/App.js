@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,7 @@ import {
   getTopRatedMovies,
   getUpComingMovies,
   getNowPlayingMovies,
+  getSearchMovies,
 } from "./actions/moviesActions";
 
 import {
@@ -19,12 +20,14 @@ import {
   getTopRatedSeries,
   getOnTheAirSeries,
   getAiringTodaySeries,
+  getSearchSeries,
 } from "./actions/seriesActions";
 
 import "./styles/App.css";
 
 const App = () => {
   const dispatch = useDispatch();
+  const [input, setInput] = useState("");
   const {
     popularMovies,
     topRatedMovies,
@@ -32,6 +35,7 @@ const App = () => {
     nowPlayingMovies,
     isMoviesLoaded,
     isMovie,
+    searchMovies,
   } = useSelector((state) => state.moviesStore);
 
   const {
@@ -40,6 +44,8 @@ const App = () => {
     onTheAirSeries,
     airingTodaySeries,
     isSeriesLoaded,
+    searchSeries,
+    isSerie,
   } = useSelector((state) => state.seriesStore);
 
   useEffect(() => {
@@ -52,6 +58,21 @@ const App = () => {
     dispatch(getOnTheAirSeries());
     dispatch(getAiringTodaySeries());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (input === "") return;
+    if (window.location.pathname === "/search") {
+      dispatch(getSearchMovies(input));
+    }
+    if (window.location.pathname === "/search/tvseries") {
+      dispatch(getSearchSeries(input));
+    }
+  }, [input, dispatch]);
+
+  const inputHandler = (e) => {
+    if (e.target.value === "") return;
+    setInput(e.target.value);
+  };
 
   return (
     <div className="container">
@@ -108,6 +129,7 @@ const App = () => {
                 <CardContainer
                   items={popularSeries}
                   isLoaded={isSeriesLoaded}
+                  isSerie={isSerie}
                 />
               }
             />
@@ -117,6 +139,7 @@ const App = () => {
                 <CardContainer
                   items={topRatedSeries}
                   isLoaded={isSeriesLoaded}
+                  isSerie={isSerie}
                 />
               }
             />
@@ -126,6 +149,7 @@ const App = () => {
                 <CardContainer
                   items={onTheAirSeries}
                   isLoaded={isSeriesLoaded}
+                  isSerie={isSerie}
                 />
               }
             />
@@ -135,11 +159,36 @@ const App = () => {
                 <CardContainer
                   items={airingTodaySeries}
                   isLoaded={isSeriesLoaded}
+                  isSerie={isSerie}
                 />
               }
             />
           </Route>
-          <Route path="/search" element={<Search />} />
+          <Route
+            path="/search"
+            element={<Search inputHandler={inputHandler} />}
+          >
+            <Route
+              path="/"
+              element={
+                <CardContainer
+                  items={searchMovies}
+                  isMovie={isMovie}
+                  isLoaded={isMoviesLoaded}
+                />
+              }
+            />
+            <Route
+              path="/tvseries"
+              element={
+                <CardContainer
+                  items={searchSeries}
+                  isSerie={isSerie}
+                  isLoaded={isMoviesLoaded}
+                />
+              }
+            />
+          </Route>
           <Route path="/watchlist" element={<Watchlist />} />
         </Routes>
       </Router>

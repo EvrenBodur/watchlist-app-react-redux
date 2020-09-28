@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   onTheAirSeries: [],
   airingTodaySeries: [],
   serieTrailer: [],
+  searchSeries: [],
   isSeriesLoaded: false,
   isSerie: true,
 };
@@ -43,6 +44,11 @@ export default (state = INITIAL_STATE, action) => {
           action.payload.results[0] === undefined
             ? []
             : action.payload.results[0],
+      };
+    case actionTypes.GET_SEARCH_SERIES:
+      return {
+        ...state,
+        searchSeries: action.payload.results,
       };
     default:
       return state;

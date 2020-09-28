@@ -68,9 +68,14 @@
 
 .detail-footer button {
   outline: none;
-  background-color: grey;
+  background-color: transparent;
   border: 1px solid white;
   padding: 5px;
+}
+
+.detail-footer button:hover {
+  background-color: #fbeaff;
+  color: #4b4453;
 }
 
 @media screen and (max-width: 414px) {
