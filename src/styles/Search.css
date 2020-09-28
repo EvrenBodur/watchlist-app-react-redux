@@ -19,13 +19,6 @@
   margin-top: 5px;
 }
 
-.search-container i {
-  position: absolute;
-  color: grey;
-  top: 65px;
-  left: 10px;
-}
-
 .search-body {
   display: flex;
   flex-wrap: wrap;

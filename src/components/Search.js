@@ -11,7 +11,6 @@ const Search = ({ inputHandler }) => {
         <p>categories</p>
       ) : (
         <Fragment>
-          <i className="fas fa-search"></i>
           <input
             onChange={inputHandler}
             className="search-input"
