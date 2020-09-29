@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "./NavLink";
 import "../styles/Navigation.css";
 
 const Navigation = () => {
@@ -16,18 +16,42 @@ const Navigation = () => {
         <div className="line"></div>
       </div>
       <div className="nav-links">
-        <Link className="nav-link" to="/" onClick={menuHandler}>
+        <NavLink
+          activeClassName="active"
+          inactiveClassName="inactive"
+          className="nav-link"
+          to="/"
+          onClick={menuHandler}
+        >
           <i className="fas fa-film"></i> Movies
-        </Link>
-        <Link className="nav-link" to="/series" onClick={menuHandler}>
+        </NavLink>
+        <NavLink
+          activeClassName="active"
+          inactiveClassName="inactive"
+          className="nav-link"
+          to="/series"
+          onClick={menuHandler}
+        >
           <i className="fas fa-tv"></i> Tv Series
-        </Link>
-        <Link className="nav-link" to="/search" onClick={menuHandler}>
+        </NavLink>
+        <NavLink
+          activeClassName="active"
+          inactiveClassName="inactive"
+          className="nav-link"
+          to="/search"
+          onClick={menuHandler}
+        >
           <i className="fas fa-search"></i> Search
-        </Link>
-        <Link className="nav-link" to="/watchlist" onClick={menuHandler}>
+        </NavLink>
+        <NavLink
+          activeClassName="active"
+          inactiveClassName="inactive"
+          className="nav-link"
+          to="/watchlist"
+          onClick={menuHandler}
+        >
           <i className="far fa-list-alt"></i> Watch List
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

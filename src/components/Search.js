@@ -15,7 +15,7 @@ const Search = ({ inputHandler }) => {
             onChange={inputHandler}
             className="search-input"
             type="text"
-            placeholder="Search for a movie, Tv series..."
+            placeholder="Search..."
           />
         </Fragment>
       )}

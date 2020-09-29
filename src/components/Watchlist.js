@@ -30,8 +30,8 @@ const Watchlist = () => {
           </div>
         ))
       ) : (
-        <p>
-          Add something to watch later{" "}
+        <p className="watchlist-text">
+          Add something to watch later
           <i className="far fa-grin-squint-tears"></i>
         </p>
       )}

@@ -1,22 +1,35 @@
 import React from "react";
+import { NavLink } from "./NavLink";
 import { Link } from "react-router-dom";
 import "../styles/MoviesHeader.css";
 
 const MoviesHeader = () => {
   return (
     <div className="movies-header">
-      <Link className="movies-link" to="/">
+      <NavLink activeClassName="active" className="movies-link" to="/">
         Popular
-      </Link>
-      <Link className="movies-link" to="/topratedmovies">
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="movies-link"
+        to="/topratedmovies"
+      >
         Top Rated
-      </Link>
-      <Link className="movies-link" to="/nowplayingmovies">
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="movies-link"
+        to="/nowplayingmovies"
+      >
         Now Playing
-      </Link>
-      <Link className="movies-link" to="/upcomingmovies">
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="movies-link"
+        to="/upcomingmovies"
+      >
         Upcoming
-      </Link>
+      </NavLink>
     </div>
   );
 };

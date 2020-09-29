@@ -1,22 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "./NavLink";
 import "../styles/SeriesHeader.css";
 
 const SeriesHeader = () => {
   return (
     <div className="series-header">
-      <Link className="series-link" to="/series">
+      <NavLink activeClassName="active" className="series-link" to="/series">
         Popular
-      </Link>
-      <Link className="series-link" to="/series/topratedseries">
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="series-link"
+        to="/series/topratedseries"
+      >
         Top Rated
-      </Link>
-      <Link className="series-link" to="/series/ontheairseries">
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="series-link"
+        to="/series/ontheairseries"
+      >
         On the Air
-      </Link>
-      <Link className="series-link" to="/series/airingtodayseries">
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="series-link"
+        to="/series/airingtodayseries"
+      >
         Airing Today
-      </Link>
+      </NavLink>
     </div>
   );
 };

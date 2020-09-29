@@ -73,7 +73,8 @@ const App = () => {
     if (e.target.value === "") return;
     setInput(e.target.value);
   };
-
+  console.log(popularMovies);
+  console.log(popularSeries);
   return (
     <div className="container">
       <Router>

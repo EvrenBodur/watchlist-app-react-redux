@@ -1,16 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "./NavLink";
 import "../styles/SearchHeader.css";
 
 const SearchHeader = () => {
   return (
     <div className="search-header">
-      <Link className="search-link" to="/search">
+      <NavLink activeClassName="active" className="search-link" to="/search">
         Movies
-      </Link>
-      <Link className="search-link" to="/search/tvseries">
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        className="search-link"
+        to="/search/tvseries"
+      >
         Tv Series
-      </Link>
+      </NavLink>
     </div>
   );
 };

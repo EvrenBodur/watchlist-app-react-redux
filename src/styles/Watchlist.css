@@ -62,3 +62,14 @@
   border: 1px solid white;
   outline: none;
 }
+
+.watchlist-text {
+  font-size: 1.2rem;
+  color: #4b4453;
+}
+
+.watchlist-text i {
+  font-size: 1.5rem;
+  margin-left: 5px;
+  color: #4b4453;
+}
