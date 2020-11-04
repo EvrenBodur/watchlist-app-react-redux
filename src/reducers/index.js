@@ -1,12 +1,24 @@
 import { combineReducers } from "redux";
-import moviesReducers from "./moviesReducers";
-import seriesReducers from "./seriesReducer";
-import watchListReducer from "./watchListReducer";
+import popularMoviesReducer from "./popularMoviesReducer";
+import topRatedMoviesReducers from "./topRatedMoviesReducer";
+import upcomingMoviesReducer from "./upcomingMoviesReducer";
+import genreReducer from "./genreReducer";
+import detailsReducer from "./detailsReducer";
+import trailerReducer from "./trailerReducer";
+import castReducer from "./castReducer";
+import searchMoviesReducer from "./searchMoviesReducer";
+import categoryMoviesReducer from "./categoryMoviesReducer";
 
 const reducers = {
-  moviesStore: moviesReducers,
-  seriesStore: seriesReducers,
-  watchListStore: watchListReducer,
+  popularMoviesStore: popularMoviesReducer,
+  topRatedMoviesStore: topRatedMoviesReducers,
+  upcomingMoviesStore: upcomingMoviesReducer,
+  genresStore: genreReducer,
+  detailsStore: detailsReducer,
+  trailerStore: trailerReducer,
+  castStore: castReducer,
+  searchMoviesStore: searchMoviesReducer,
+  categoryMoviesStore: categoryMoviesReducer,
 };
 
 const rootReducer = combineReducers(reducers);

@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 90vh;
+}
+
+.left-container,
+.right-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 5%;
+  height: 100%;
+}
+
+.container-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  min-height: 90vh;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.fas {
+  font-size: 1.5rem;
+  color: tomato;
+  cursor: pointer;
+}
+
+.fas:hover {
+  font-size: 2rem;
+}

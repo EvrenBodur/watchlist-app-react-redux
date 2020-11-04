@@ -1,0 +1,83 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100%;
+  color: tomato;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+
+.navigation-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+}
+.navigation-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100%;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: tomato;
+}
+
+.navigation-link:hover {
+  background-color: tomato;
+  color: #333;
+}
+
+.active {
+  border-bottom: 1px solid tomato;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 100%;
+}
+
+.menu-line {
+  width: 25px;
+  height: 2px;
+  background-color: tomato;
+  margin-bottom: 3px;
+}
+
+@media screen and (max-width: 1024px) {
+  .navigation-links {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+  }
+  .hamburger-menu {
+    display: flex;
+    z-index: 10;
+  }
+}
+
+.open {
+  display: flex;
+}
