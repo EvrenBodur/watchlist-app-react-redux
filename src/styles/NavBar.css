@@ -20,7 +20,7 @@
 .navigation-links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 50%;
   height: 100%;
   background-color: #333;

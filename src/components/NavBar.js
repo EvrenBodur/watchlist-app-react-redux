@@ -50,26 +50,6 @@ const NavBar = () => {
         >
           Watch List
         </Link>
-        <Link
-          className={
-            location.pathname === "/login"
-              ? "navigation-link active"
-              : "navigation-link"
-          }
-          to="login"
-        >
-          Login
-        </Link>
-        <Link
-          className={
-            location.pathname === "/signup"
-              ? "navigation-link active"
-              : "navigation-link"
-          }
-          to="signup"
-        >
-          Sign Up
-        </Link>
       </div>
       <div className="hamburger-menu" onClick={menuHandler}>
         <div className="menu-line"></div>

@@ -15,7 +15,7 @@ const Details = () => {
   useEffect(() => {
     dispatch(fetchTrailer(movieID));
     dispatch(fetchCast(movieID));
-  }, [dispatch]);
+  }, [dispatch, movieID]);
 
   return (
     <div

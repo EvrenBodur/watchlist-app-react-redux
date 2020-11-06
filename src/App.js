@@ -10,9 +10,9 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Container from "./components/Container";
 import Details from "./components/Details";
-import SignUp from "./components/SignUp";
 import Search from "./components/Search";
 import Categories from "./components/Categories";
+import Watchlist from "./components/Watchlist";
 import "./styles/App.css";
 
 export class Pager {
@@ -125,9 +125,7 @@ const App = () => {
           </Route>
           <Route path="/search" element={<Search />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/watchlist" element={<p>Watch List</p>} />
-          <Route path="/login" element={<p>Login</p>} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/:id" element={<Details />} />
         </Routes>
       </BrowserRouter>
