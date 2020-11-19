@@ -30,3 +30,7 @@ export const GET_CAST_SUCCESS = "GET_CAST_SUCCESS";
 export const GET_CAST_FAIL = "GET_CAST_FAIL";
 
 export const SET_DETAIL = "SET_DETAIL";
+
+export const ADD_TO_WATCHLIST = "ADD_TO_WATCHLIST";
+
+export const DELETE_FROM_WATCHLIST = "DELETE_FROM_WATCHLIST";

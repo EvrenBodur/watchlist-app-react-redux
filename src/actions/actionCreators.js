@@ -111,3 +111,13 @@ export const setDetail = (data) => ({
   type: actionTypes.SET_DETAIL,
   payload: data,
 });
+
+export const addToWatchList = (data) => ({
+  type: actionTypes.ADD_TO_WATCHLIST,
+  payload: data,
+});
+
+export const deleteFromWatchList = (id) => ({
+  type: actionTypes.DELETE_FROM_WATCHLIST,
+  payload: id,
+});

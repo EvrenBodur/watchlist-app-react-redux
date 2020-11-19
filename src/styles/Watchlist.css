@@ -1,4 +1,67 @@
 .watchlist-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
+}
+
+.list-item-container {
+  display: flex;
+  width: 400px;
+  height: 150px;
+  background-color: rgb(77, 77, 77);
+  margin: 10px auto;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.507);
+}
+
+.list-item-img {
+  width: 100px;
+  height: 100%;
+}
+
+.list-item-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.list-item-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  min-height: 100%;
+  padding: 5px;
+}
+
+.list-item-body button {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  color: tomato;
+}
+
+.list-item-body button:hover {
+  background: tomato;
+  color: #333;
+}
+
+.list-item-title,
+.list-item-rate {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.list-item-genres {
+  display: flex;
+  color: grey;
+  width: 100%;
+  font-size: 12px;
+}
+
+.list-item-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

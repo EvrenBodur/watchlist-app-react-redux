@@ -8,6 +8,7 @@ import trailerReducer from "./trailerReducer";
 import castReducer from "./castReducer";
 import searchMoviesReducer from "./searchMoviesReducer";
 import categoryMoviesReducer from "./categoryMoviesReducer";
+import watchListReducer from "./watchListReducer";
 
 const reducers = {
   popularMoviesStore: popularMoviesReducer,
@@ -19,6 +20,7 @@ const reducers = {
   castStore: castReducer,
   searchMoviesStore: searchMoviesReducer,
   categoryMoviesStore: categoryMoviesReducer,
+  watchListStore: watchListReducer,
 };
 
 const rootReducer = combineReducers(reducers);

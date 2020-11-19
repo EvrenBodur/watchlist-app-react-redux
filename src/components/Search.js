@@ -11,8 +11,10 @@ const Search = () => {
   const { searchMovies } = useSelector((state) => state.searchMoviesStore);
   const [value, setValue] = useState("");
   const [searchPage, setSearchPage] = useState(1);
+
   const valueHandler = (e) => {
     setValue(e.target.value);
+    setSearchPage(1);
   };
 
   const searchPageHandler = (e) => {

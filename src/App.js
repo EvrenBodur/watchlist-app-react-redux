@@ -40,15 +40,9 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  const { popularMovies, popularTotalPages } = useSelector(
-    (state) => state.popularMoviesStore
-  );
-  const { topRatedMovies, topRatedTotalPages } = useSelector(
-    (state) => state.topRatedMoviesStore
-  );
-  const { upcomingMovies, upcomingTotalPages } = useSelector(
-    (state) => state.upcomingMoviesStore
-  );
+  const { popularMovies } = useSelector((state) => state.popularMoviesStore);
+  const { topRatedMovies } = useSelector((state) => state.topRatedMoviesStore);
+  const { upcomingMovies } = useSelector((state) => state.upcomingMoviesStore);
 
   const popularPageHandler = (e) => {
     const newPager = new Pager(

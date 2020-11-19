@@ -109,3 +109,11 @@ export const fetchCast = (movieID) => async (dispatch) => {
 export const setMovieDetails = (data) => (dispatch) => {
   dispatch(action.setDetail(data));
 };
+
+export const addItemToWatchList = (data) => (dispatch) => {
+  dispatch(action.addToWatchList(data));
+};
+
+export const deleteItemFromWatchList = (id) => (dispatch) => {
+  dispatch(action.deleteFromWatchList(id));
+};

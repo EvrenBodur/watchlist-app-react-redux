@@ -16,6 +16,7 @@ const Categories = () => {
 
   const handleSelect = (e) => {
     setValue(e.target.value);
+    setCategoryPage(1);
   };
 
   const categoriesPageHandler = (e) => {
@@ -39,7 +40,11 @@ const Categories = () => {
         <form>
           <select value={value} onChange={handleSelect}>
             {genres.map((genre) => {
-              return <option value={genre.id}>{genre.name}</option>;
+              return (
+                <option key={genre.name} value={genre.id}>
+                  {genre.name}
+                </option>
+              );
             })}
           </select>
         </form>
